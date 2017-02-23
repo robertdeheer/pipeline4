@@ -1,8 +1,8 @@
-stages {
+//stages {
    stage('checkout...') {
       node {
          // Mark the code checkout 'stage'....
-         stage 'Checkout'
+         //stage 'Checkout'
 
          // Get some code from a GitHub repository
          checkout scm
@@ -13,11 +13,11 @@ stages {
    }
    stage('say howdy...') {
       node {
-          stage 'Hello'
+          //stage 'Hello'
           unstash 'root'
           def hello = "Hello, world"
           echo hello
 
       }
    }
-}
+//}
