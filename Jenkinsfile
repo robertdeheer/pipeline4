@@ -1,4 +1,4 @@
-//stages {
+stages {
    stage('checkout...') {
       node {
          // Mark the code checkout 'stage'....
@@ -20,4 +20,4 @@
 
       }
    }
-//}
+}
