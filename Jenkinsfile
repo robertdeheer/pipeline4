@@ -1,23 +1,11 @@
-//stages {
-   stage('checkout...') {
-      node {
-         // Mark the code checkout 'stage'....
-         //stage 'Checkout'
-
-         // Get some code from a GitHub repository
-         checkout scm
-
-         stash includes: '*', name: 'root'
-
-      }
+node('vjs-ub14-002 ||  vjs-ub14-001') {
+   stage('checkout packer config') {
+      // Get some code from a GitHub repository
+      // checkout scm
+      git url: 'https://v-usmi-e-github1.eng.fireeye.com/robert-deheer/Packer',
+         branch: 'fe-proxy'
    }
-   stage('say howdy...') {
-      node {
-          //stage 'Hello'
-          unstash 'root'
-          def hello = "Hello, world"
-          echo hello
-
-      }
+   stage('build ami') {
+      sh "packer build -var='base_name=myapp' -var='project_id=evandbrown17' -var='revision=${rev}' packer.json"
    }
-//}
+}
