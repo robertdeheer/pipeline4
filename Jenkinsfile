@@ -12,7 +12,7 @@ node {
 node {
     stage 'Hello'
     unstash 'root'
-    def hello = readFile('world.txt')
+    def hello = "Hello, world"
     echo hello
 
 }
