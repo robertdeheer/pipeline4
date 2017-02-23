@@ -1,8 +1,6 @@
 node('vss-u ||  vss-u') {
 
    stage('checkout packer config') {
-      // Get some code from a GitHub repository
-      // checkout scm
       git url: 'https://github.com/robert-deheer/Packer.git',
          branch: 'fe-proxy'
    }
