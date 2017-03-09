@@ -35,7 +35,7 @@ node('vss-u ||  vss-u') {
 
      withCredentials([[$class: 'AmazonWebServicesCredentialsBinding',
         accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-        credentialsId: '4885fed4-c315-42430-b90b-7b566776da37',
+        credentialsId: '488336678-c315-42430-b90b-7b566776da37',
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
            sh '''
               /Users/build/tools/biz.neustar.jenkins.plugins.packer.PackerInstallation/Packer_0.10.1/packer \
